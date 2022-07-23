@@ -7,11 +7,22 @@ class Solution:
     #                 return True
     #     return False
     # Approach 2 : O(n log n)
+#     def containsDuplicate(self, nums: List[int]) -> bool:
+#         nums.sort()
+#         for i in range(0,len(nums)-1):
+#             if(nums[i]==nums[i+1]):
+#                 return True
+#         return False
+     # Approach 3 : O(n) Hash Set
     def containsDuplicate(self, nums: List[int]) -> bool:
-        nums.sort()
-        for i in range(0,len(nums)-1):
-            if(nums[i]==nums[i+1]):
+        temp = set()
+        for num in nums:
+            if num in temp:
                 return True
+            else:
+                temp.add(num)
         return False
+    
+    
         
     
